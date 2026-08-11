@@ -1,0 +1,44 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- confetti -->
+  <circle cx="200" cy="230" r="16" fill="#ffd166"/>
+  <circle cx="840" cy="300" r="14" fill="#ff6fa5"/>
+  <circle cx="180" cy="640" r="12" fill="#4fd6b0"/>
+  <circle cx="860" cy="700" r="18" fill="#ffd166"/>
+  <rect x="760" y="180" width="22" height="22" fill="#ff6fa5" transform="rotate(20 771 191)"/>
+  <rect x="150" y="480" width="20" height="20" fill="#7c6cf0" transform="rotate(-15 160 490)"/>
+
+  <!-- party hat (tilted right) -->
+  <g transform="rotate(18 600 420)">
+    <polygon points="512,180 610,470 414,470" fill="#ff6fa5"/>
+    <polygon points="512,180 610,470 512,470" fill="#e2548a"/>
+    <circle cx="512" cy="440" r="26" fill="#ffd166"/>
+    <circle cx="512" cy="360" r="18" fill="#ffd166"/>
+    <circle cx="512" cy="280" r="12" fill="#ffd166"/>
+    <circle cx="512" cy="180" r="24" fill="#ffd166"/>
+  </g>
+
+  <!-- baby head -->
+  <circle cx="512" cy="580" r="260" fill="#ffdcb0"/>
+
+  <!-- ears -->
+  <circle cx="270" cy="590" r="46" fill="#ffdcb0"/>
+  <circle cx="754" cy="590" r="46" fill="#ffdcb0"/>
+
+  <!-- hair tuft -->
+  <path d="M 470 340 Q 500 260 540 340 Q 520 300 490 320 Z" fill="#6b4a35"/>
+
+  <!-- rosy cheeks -->
+  <ellipse cx="380" cy="640" rx="38" ry="26" fill="#ff9fb8" opacity="0.7"/>
+  <ellipse cx="644" cy="640" rx="38" ry="26" fill="#ff9fb8" opacity="0.7"/>
+
+  <!-- sleepy closed eyes -->
+  <path d="M 400 560 Q 425 585 450 560" stroke="#4a2f22" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <path d="M 574 560 Q 599 585 624 560" stroke="#4a2f22" stroke-width="14" stroke-linecap="round" fill="none"/>
+
+  <!-- smile -->
+  <path d="M 470 660 Q 512 692 554 660" stroke="#4a2f22" stroke-width="12" stroke-linecap="round" fill="none"/>
+
+  <!-- Zzz -->
+  <text x="770" y="470" font-family="Arial, sans-serif" font-weight="800" font-size="70" fill="#ffffff" opacity="0.9">Z</text>
+  <text x="810" y="420" font-family="Arial, sans-serif" font-weight="800" font-size="52" fill="#ffffff" opacity="0.75">z</text>
+</svg>
