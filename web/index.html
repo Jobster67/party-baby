@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<title>Party Baby</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <section id="screen-title" class="screen active">
+      <div class="title-card">
+        <div class="title-emoji">🍼🎉👶</div>
+        <h1>Party Baby</h1>
+        <p class="tagline">8:00 PM &mdash; 8:00 AM.<br>Feed the baby 4 times and keep the sleep going.<br>Guess wrong, and the partying begins.</p>
+        <p class="pronoun-prompt">Is your baby a boy or a girl?</p>
+        <div class="pronoun-buttons">
+          <button id="btn-boy" class="btn btn-primary">Boy 💙</button>
+          <button id="btn-girl" class="btn btn-primary">Girl 💗</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-game" class="screen">
+      <div class="topbar">
+        <div class="clock" id="clock">8:00 PM</div>
+        <div class="feeds" id="feeds">
+          <span class="feed-icon" data-i="0">🍼</span>
+          <span class="feed-icon" data-i="1">🍼</span>
+          <span class="feed-icon" data-i="2">🍼</span>
+          <span class="feed-icon" data-i="3">🍼</span>
+        </div>
+      </div>
+      <div class="meter-wrap">
+        <div class="meter-label">Sleep</div>
+        <div class="meter"><div class="meter-fill" id="sleep-meter"></div></div>
+      </div>
+
+      <div class="stage">
+        <div class="scenario-card" id="scenario-card">
+          <div class="scenario-emoji" id="scenario-emoji">😴</div>
+          <p class="scenario-text" id="scenario-text">The baby is sleeping soundly.</p>
+        </div>
+        <div class="feedback" id="feedback"></div>
+        <div class="options" id="options"></div>
+      </div>
+    </section>
+
+    <section id="screen-end" class="screen">
+      <div class="title-card">
+        <div class="end-emoji" id="end-emoji">🌅</div>
+        <h1>8:00 AM</h1>
+        <p class="sleep-grade" id="end-grade">Sleep Grade: A+</p>
+        <p class="stars" id="end-stars">⭐ 10/10</p>
+        <p class="end-tagline" id="end-tagline"></p>
+        <div class="stat-row">
+          <div class="stat"><span class="stat-value" id="end-feeds">0/4</span><span class="stat-label">Feedings</span></div>
+          <div class="stat"><span class="stat-value" id="end-sleep">0%</span><span class="stat-label">Sleep Score</span></div>
+        </div>
+        <button id="btn-again" class="btn btn-primary">Play Again Tonight</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="scenarios.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

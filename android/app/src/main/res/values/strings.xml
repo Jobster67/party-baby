@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Party Baby</string>
+    <string name="title_activity_main">Party Baby</string>
+    <string name="package_name">com.strunck.partybaby</string>
+    <string name="custom_url_scheme">com.strunck.partybaby</string>
+</resources>

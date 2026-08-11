@@ -1,0 +1,50 @@
+workflows:
+  ios-workflow:
+    name: Party Baby iOS
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    integrations:
+      # This name must match an App Store Connect integration you create
+      # under Codemagic Team settings > Integrations > Apple Developer Portal.
+      app_store_connect: appstore_credentials
+    environment:
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.strunck.partybaby
+      vars:
+        XCODE_WORKSPACE: "ios/App/App.xcworkspace"
+        XCODE_SCHEME: "App"
+      node: latest
+      xcode: latest
+      cocoapods: default
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+    scripts:
+      - name: Install npm dependencies
+        script: npm install
+      - name: Install CocoaPods dependencies
+        script: |
+          cd ios/App && pod install
+      - name: Set up code signing (pulls certs/profiles automatically)
+        script: xcode-project use-profiles
+      - name: Increment build number
+        script: |
+          cd ios/App
+          agvtool new-version -all $BUILD_NUMBER
+      - name: Build .ipa for distribution
+        script: |
+          xcode-project build-ipa \
+            --workspace "$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        submit_to_app_store: false
