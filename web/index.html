@@ -14,11 +14,44 @@
         <div class="title-emoji">🍼🎉👶</div>
         <h1>Party Baby</h1>
         <p class="tagline">8:00 PM &mdash; 8:00 AM.<br>Feed the baby 4 times and keep the sleep going.<br>Guess wrong, and the partying begins.</p>
+
+        <div class="title-stats" id="title-stats" hidden>
+          <p class="title-stats-best" id="title-stats-best">⭐ 0/10</p>
+          <p class="title-stats-nights" id="title-stats-nights">0 nights survived</p>
+        </div>
+
         <p class="pronoun-prompt">Is your baby a boy or a girl?</p>
         <div class="pronoun-buttons">
           <button id="btn-boy" class="btn btn-primary">Boy 💙</button>
           <button id="btn-girl" class="btn btn-primary">Girl 💗</button>
         </div>
+
+        <button id="btn-how-to-play" class="link-btn">How to play</button>
+      </div>
+    </section>
+
+    <section id="screen-howto" class="screen">
+      <div class="title-card howto-card">
+        <h1>How to Play</h1>
+        <div class="howto-body">
+          <section>
+            <h2>The goal</h2>
+            <p>Get from 8:00 PM to 8:00 AM. Feed the baby exactly 4 times, and keep the baby asleep as much as possible.</p>
+          </section>
+          <section>
+            <h2>Each turn</h2>
+            <p>The baby signals a need. Pick the response that matches it. Every option falls somewhere on a scale from <strong>best</strong> down to <strong>worst</strong> &mdash; the better the read, the more sleep you bank. Miss badly, and the baby parties instead of sleeping.</p>
+          </section>
+          <section>
+            <h2>Feeding</h2>
+            <p>Offering a bottle always counts as a feed, whether or not the baby was actually hungry &mdash; so feeding at the wrong moment still uses up one of your 4, and costs sleep besides.</p>
+          </section>
+          <section>
+            <h2>Scoring</h2>
+            <p>Your <strong>Sleep Grade</strong> (letter grade) reflects how much of the night the baby actually slept. Your <strong>star rating</strong> is stricter &mdash; it only hits 10/10 if every single decision all night was the single best choice available.</p>
+          </section>
+        </div>
+        <button id="btn-howto-close" class="btn btn-primary">Got it</button>
       </div>
     </section>
 
@@ -53,6 +86,7 @@
         <h1>8:00 AM</h1>
         <p class="sleep-grade" id="end-grade">Sleep Grade: A+</p>
         <p class="stars" id="end-stars">⭐ 10/10</p>
+        <p class="new-best" id="end-new-best" hidden>New personal best!</p>
         <p class="end-tagline" id="end-tagline"></p>
         <div class="stat-row">
           <div class="stat"><span class="stat-value" id="end-feeds">0/4</span><span class="stat-label">Feedings</span></div>

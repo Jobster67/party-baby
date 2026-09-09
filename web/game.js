@@ -16,6 +16,48 @@ const PRONOUNS = {
 let currentPronouns = null;
 let state = null;
 
+// ---------- Local best-night stats (device-only, never transmitted) ----------
+
+const STATS_KEY = "partyBabyStats";
+
+function loadStats() {
+  try {
+    const raw = localStorage.getItem(STATS_KEY);
+    if (!raw) return { nightsPlayed: 0, bestStars: 0, bestSleepPct: 0, bestFeeds: 0 };
+    const parsed = JSON.parse(raw);
+    return {
+      nightsPlayed: parsed.nightsPlayed || 0,
+      bestStars: parsed.bestStars || 0,
+      bestSleepPct: parsed.bestSleepPct || 0,
+      bestFeeds: parsed.bestFeeds || 0,
+    };
+  } catch (e) {
+    return { nightsPlayed: 0, bestStars: 0, bestSleepPct: 0, bestFeeds: 0 };
+  }
+}
+
+function saveStats(stats) {
+  try {
+    localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+  } catch (e) {
+    // localStorage unavailable (private browsing, etc.) — stats just won't persist.
+  }
+}
+
+function updateTitleStats() {
+  const stats = loadStats();
+  const el = document.getElementById("title-stats");
+  if (stats.nightsPlayed === 0) {
+    el.hidden = true;
+    return;
+  }
+  el.hidden = false;
+  document.getElementById("title-stats-best").textContent =
+    `⭐ ${stats.bestStars}/10 · Grade ${gradeForPct(stats.bestSleepPct)}`;
+  document.getElementById("title-stats-nights").textContent =
+    `${stats.nightsPlayed} night${stats.nightsPlayed === 1 ? "" : "s"} survived`;
+}
+
 function shuffle(arr) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
@@ -262,6 +304,20 @@ function renderEnd() {
   document.getElementById("end-feeds").textContent = `${feeds}/4`;
   document.getElementById("end-sleep").textContent = `${sleepPct}%`;
 
+  const stats = loadStats();
+  const hadPriorNight = stats.nightsPlayed > 0;
+  stats.nightsPlayed += 1;
+  const isNewBest =
+    hadPriorNight &&
+    (starRating > stats.bestStars || (starRating === stats.bestStars && sleepPct > stats.bestSleepPct));
+  if (starRating > stats.bestStars || (starRating === stats.bestStars && sleepPct > stats.bestSleepPct)) {
+    stats.bestStars = starRating;
+    stats.bestSleepPct = sleepPct;
+    stats.bestFeeds = feeds;
+  }
+  saveStats(stats);
+  document.getElementById("end-new-best").hidden = !isNewBest;
+
   showScreen("screen-end");
 }
 
@@ -277,3 +333,8 @@ function startGame(pronounKey) {
 document.getElementById("btn-boy").addEventListener("click", () => startGame("boy"));
 document.getElementById("btn-girl").addEventListener("click", () => startGame("girl"));
 document.getElementById("btn-again").addEventListener("click", () => startGame(currentPronouns === PRONOUNS.girl ? "girl" : "boy"));
+
+document.getElementById("btn-how-to-play").addEventListener("click", () => showScreen("screen-howto"));
+document.getElementById("btn-howto-close").addEventListener("click", () => showScreen("screen-title"));
+
+updateTitleStats();

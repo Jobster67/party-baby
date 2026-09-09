@@ -248,6 +248,102 @@ const OTHER_SCENARIOS = [
       { label: "Turn on a bright toy", tier: "bad" },
     ],
   },
+  {
+    id: "spit-up-1",
+    category: "reflux",
+    emoji: "🤢",
+    text: "Right after the feed, {{he}} spits up a little and starts to fuss.",
+    options: [
+      { label: "Hold {{him}} upright for a few minutes before laying back down", tier: "great" },
+      { label: "Burp {{him}} again gently", tier: "good" },
+      { label: "Wipe {{him}} up and lay back down right away", tier: "ok" },
+      { label: "Bounce {{him}} energetically to help it settle", tier: "worst" },
+    ],
+  },
+  {
+    id: "congestion-1",
+    category: "congestion",
+    emoji: "🤧",
+    text: "{{His}} breathing sounds a little snuffly and {{he}}'s having trouble settling with a stuffy nose.",
+    options: [
+      { label: "Run a cool-mist humidifier nearby", tier: "great" },
+      { label: "Use a bulb syringe to gently clear {{his}} nose", tier: "good" },
+      { label: "Hold {{him}} upright for a while", tier: "ok" },
+      { label: "Wipe vigorously at {{his}} nose with a tissue", tier: "worst" },
+    ],
+  },
+  {
+    id: "overheating-visitor-1",
+    category: "temperature",
+    emoji: "🥵",
+    text: "A visitor tucked an extra blanket around {{him}} \"just to be safe\" before leaving, and {{he}}'s flushed, sweaty, and fussing.",
+    options: [
+      { label: "Remove the blanket and check {{his}} temperature by feel", tier: "great" },
+      { label: "Switch {{him}} to a lighter sleep sack", tier: "good" },
+      { label: "Crack a window for fresh air", tier: "ok" },
+      { label: "Leave the blanket — it's probably fine", tier: "worst" },
+    ],
+  },
+  {
+    id: "noise-2",
+    category: "noise",
+    emoji: "😖",
+    text: "The white noise machine got bumped and is now blasting much louder than usual, and {{he}}'s startled and crying.",
+    options: [
+      { label: "Turn the volume down to a gentle level", tier: "great" },
+      { label: "Turn the machine off completely for now", tier: "good" },
+      { label: "Move {{him}} to another room", tier: "ok" },
+      { label: "Turn the volume up further to drown out the crying", tier: "worst" },
+    ],
+  },
+  {
+    id: "sibling-noise-1",
+    category: "noise",
+    emoji: "😟",
+    text: "An older sibling is being loud down the hall, and {{he}} stirs and starts to whimper.",
+    options: [
+      { label: "Quietly ask for a little more quiet and stay close", tier: "great" },
+      { label: "Turn on white noise to help mask it", tier: "good" },
+      { label: "Pat {{him}} gently and wait it out", tier: "ok" },
+      { label: "Turn on the TV loudly to compete with the noise", tier: "worst" },
+    ],
+  },
+  {
+    id: "tight-swaddle-1",
+    category: "swaddle",
+    emoji: "😣",
+    text: "{{His}} swaddle has gotten twisted and tight, and {{he}}'s squirming uncomfortably, face reddening.",
+    options: [
+      { label: "Unwrap and re-swaddle {{him}} snugly but not too tight", tier: "great" },
+      { label: "Loosen the swaddle around {{his}} hips", tier: "good" },
+      { label: "Pat {{him}} through the swaddle and wait", tier: "ok" },
+      { label: "Wrap another layer around the swaddle to keep {{him}} still", tier: "worst" },
+    ],
+  },
+  {
+    id: "doorbell-1",
+    category: "startle",
+    emoji: "😨",
+    text: "The doorbell rings loudly and {{he}} jolts awake with a startled cry.",
+    options: [
+      { label: "Swaddle {{him}} snugly and soothe {{him}} with quiet shushing", tier: "great" },
+      { label: "Pick {{him}} up and hold {{him}} close for a moment", tier: "good" },
+      { label: "Turn on white noise", tier: "ok" },
+      { label: "Rush to answer the door and leave {{him}} crying", tier: "worst" },
+    ],
+  },
+  {
+    id: "wants-walked-1",
+    category: "comfort",
+    emoji: "🥺",
+    text: "{{He}} settles best when moving, and starts fussing the moment you sit down or stop swaying.",
+    options: [
+      { label: "Walk slowly around the room while holding {{him}}", tier: "great" },
+      { label: "Sway gently side to side without walking", tier: "good" },
+      { label: "Sit and pat {{his}} back rhythmically", tier: "ok" },
+      { label: "Set {{him}} down and hope {{he}} settles alone", tier: "worst" },
+    ],
+  },
 ];
 
 // Guaranteed once-per-night — teaches the ABCs of safe sleep (Alone, on the
